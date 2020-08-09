@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="FinancesPlay.View.Fim">
+    <Grid>
+        <gradient:SfGradientView>
+            <gradient:SfGradientView.BackgroundBrush>
+                <gradient:SfLinearGradientBrush>
+                    <gradient:SfLinearGradientBrush.GradientStops>
+                        <gradient:SfGradientStop Color="#242B5C" Offset="0.0" />
+                        <gradient:SfGradientStop Color="#77B6DC" Offset="1.0" />
+                    </gradient:SfLinearGradientBrush.GradientStops>
+                </gradient:SfLinearGradientBrush>
+            </gradient:SfGradientView.BackgroundBrush>
+        </gradient:SfGradientView>
+
+        <FlexLayout FlexLayout.Grow="1"
+                    Direction="Column">
+            <RelativeLayout FlexLayout.Grow="1">
+                <FlexLayout JustifyContent="Center"
+                            AlignItems="End">
+                    <Image x:Name="imageFim"
+                           Aspect="AspectFill"/>
+                </FlexLayout>
+                <StackLayout x:Name="stackLayout">
+                    <Label Text="Lorem ipsum doaaaaa aaaaa aaaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaaalor sit amet?"
+                               x:Name="labelTexto"
+                               Margin="20"
+                               LineBreakMode="WordWrap"
+                               FontSize="25"
+                               TextColor="WhiteSmoke"
+                               HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </RelativeLayout>
+        </FlexLayout>
+
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="FinancesPlay.View.SelecionarAvatar"
+             NavigationPage.HasNavigationBar="false">
+    <Grid>
+        <gradient:SfGradientView>
+            <gradient:SfGradientView.BackgroundBrush>
+                <gradient:SfLinearGradientBrush>
+                    <gradient:SfLinearGradientBrush.GradientStops>
+                        <gradient:SfGradientStop Color="#242B5C" Offset="0.0" />
+                        <gradient:SfGradientStop Color="#77B6DC" Offset="1.0" />
+                    </gradient:SfLinearGradientBrush.GradientStops>
+                </gradient:SfLinearGradientBrush>
+            </gradient:SfGradientView.BackgroundBrush>
+        </gradient:SfGradientView>
+
+        <FlexLayout Direction="Column">
+            <FlexLayout FlexLayout.Grow="0.2"
+                        JustifyContent="Center"
+                        AlignItems="Center">
+                <Label TextColor="WhiteSmoke"
+                       FontAttributes="Bold"
+                       FontSize="25">Selecione seu avatar</Label>
+            </FlexLayout>
+
+            <FlexLayout FlexLayout.Grow="0.5" 
+                        Direction="Column"               
+                        JustifyContent="Center"
+                        AlignItems="Center">
+                <CarouselView x:Name="cvAvatar">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <FlexLayout Direction="Column"
+                                    JustifyContent="Center"
+                                    AlignItems="Center">
+                                <Image Source="{Binding Arquivo}" 
+                                   HorizontalOptions="Center" />
+                            </FlexLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </FlexLayout>
+            <FlexLayout FlexLayout.Grow="0.3"
+                        JustifyContent="Center"
+                        AlignItems="Center"
+                        Direction="Column">
+                <Label TextColor="WhiteSmoke"
+                       FontAttributes="Bold"
+                       FontSize="25">Digite seu nome</Label>
+                <inputLayout:SfTextInputLayout
+                    CharMaxLength="14"
+                    ContainerType="Outlined"
+                    OutlineCornerRadius="16"
+                    ContainerBackgroundColor="White"
+                    WidthRequest="300"
+                    FocusedColor="ForestGreen">
+                    <Entry x:Name="inputNome" />
+                </inputLayout:SfTextInputLayout>
+            </FlexLayout>
+            <!-- Botão continuar -->
+            <FlexLayout Direction="Row"
+                    FlexLayout.Grow="0.3"
+                    AlignItems="Center"
+                    JustifyContent="SpaceEvenly">
+                <Button Text="Escolher"
+                    x:Name="btnEscolher"
+                    Clicked="btnEscolher_Clicked"
+                    Style="{StaticResource botaoComecarContinuar}"/>
+            </FlexLayout>
+        </FlexLayout>
+    </Grid>
+</ContentPage>
